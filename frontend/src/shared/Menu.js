@@ -5,7 +5,8 @@ export default function Menu() {
   return (
     <div className="container">
         <div className='menu'>
-        <a href='/'>Customer</a>
+            <h2> Banking Application</h2>
+            <a href='/'>Customer</a>
             <a href='/deposit'>New Deposit</a>
             <a href='/withdrawal'>withdrawal</a>
             <a href='/cheque'>Cheque Deposit</a>

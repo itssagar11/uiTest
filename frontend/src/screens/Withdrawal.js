@@ -32,7 +32,7 @@ export const Withdrawal = () => {
                 }
             })
             .catch(error => {
-                setError('Failed to withdraw');
+                setError('Backend Error');
                 setSuccess('');
             });
     };
@@ -47,9 +47,10 @@ export const Withdrawal = () => {
                     <input type='number' name='amount' placeholder='Enter Amount' value={formData.amount} onChange={handleChange} required />
                     <button type='submit'>Withdraw</button>
                 </div>
-            </form>
-            {error && <div className='error'>{error}</div>}
+                {error && <div className='error'>{error}</div>}
             {success && <div className='success'>{success}</div>}
+            </form>
+           
         </div>
     );
 };

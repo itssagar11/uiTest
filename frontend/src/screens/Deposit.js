@@ -32,7 +32,7 @@ export const Deposit = () => {
                 }
             })
             .catch(error => {
-                setError('Failed to deposit');
+                setError('Backend Error');
                 setSuccess('');
             });
     };
@@ -47,9 +47,11 @@ export const Deposit = () => {
                     <input type='number' name='amount' placeholder='Enter Amount' value={formData.amount} onChange={handleChange} required />
                     <button type='submit'>Deposit</button>
                 </div>
-            </form>
-            {error && <div className='error'>{error}</div>}
+                {error && <div className='error'>{error}</div>}
             {success && <div className='success'>{success}</div>}
+         
+            </form>
+          
         </div>
     );
 };

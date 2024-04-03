@@ -34,7 +34,7 @@ export const ChequeDeposit = () => {
                 }
             })
             .catch(error => {
-                setError('Failed to deposit cheque');
+                setError('Backend Error');
                 setSuccess('');
             });
     };
@@ -51,9 +51,11 @@ export const ChequeDeposit = () => {
                     <input type='number' name='amount' placeholder='Enter Amount' value={formData.amount} onChange={handleChange} required />
                     <button type='submit'>Deposit Cheque</button>
                 </div>
-            </form>
-            {error && <div className='error'>{error}</div>}
+                {error && <div className='error'>{error}</div>}
             {success && <div className='success'>{success}</div>}
+            
+            </form>
+           
         </div>
     );
 };

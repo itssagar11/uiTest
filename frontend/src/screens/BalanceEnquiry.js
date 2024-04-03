@@ -24,7 +24,7 @@ export const BalanceEnquiry = () => {
         axios.get(`http://localhost:8085/balance-enquiry?accountNo=${formData.accountNo}&IFSC=${formData.ifsc}`)
             .then(response => {
                 if (response.status === 200) {
-                    setBalance(`Balance: ${response.data}`);
+                    setBalance(response.data);
                     setError('');
                 } else {
                     setError(response.data);
@@ -32,7 +32,7 @@ export const BalanceEnquiry = () => {
                 }
             })
             .catch(error => {
-                setError('Failed to retrieve balance');
+                setError('Backend Error');
                 setSuccess('');
             });
     };
@@ -46,9 +46,11 @@ export const BalanceEnquiry = () => {
                     <input type='text' name='ifsc' placeholder='Enter IFSC' value={formData.ifsc} onChange={handleChange} required />
                     <button type='submit'>Get Balance</button>
                 </div>
-            </form>
-            {error && <div className='error'>{error}</div>}
+                {error && <div className='error'>{error}</div>}
             {balance && <div className='success'>{balance}</div>}
+           
+            </form>
+           
         </div>
     );
 };
