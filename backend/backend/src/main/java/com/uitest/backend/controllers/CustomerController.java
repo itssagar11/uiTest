@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 @RestController
-@CrossOrigin(origins = "*")
+@CrossOrigin("http://localhost:3000")
 public class CustomerController {
 
 
